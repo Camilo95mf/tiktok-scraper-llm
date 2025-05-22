@@ -1,6 +1,8 @@
+
+import os
 from TikTokManager.tiktokmanager import TikTokManager
 
-import pyktok as pyk
+# import pyktok as pyk
 # import asyncio
 # import json
 
@@ -47,13 +49,8 @@ import pyktok as pyk
 
 if __name__ == "__main__":
     tkm = TikTokManager("./output", "./temp")
-    tkm.extract_videos_data("usavscanada", 2)
-
-    # pyk.save_tiktok_multi_page(
-    #         tt_ent="trump",
-    #         ent_type='hashtag',
-    #         video_ct=5,
-    #         save_video=False,
-    #         metadata_fn="./temp/test.csv",
-    #         sleep=10
-    #     )
+    # res = tkm.extract_videos_data_v2(["carlosfernandogalan","galánalcalde","alcaldegalan"], 700, 2000)
+    res = tkm.extract_videos_data_v2(["gustavopetro","GobiernoColombiano","petropresidente"], 1000, 2000)
+    # res = tkm.extract_videos_data_v2(["trump"], 5, 1)
+    # res = tkm.get_video_transcription(['7229747166057712901'])
+    print(res)
